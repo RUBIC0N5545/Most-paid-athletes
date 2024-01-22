@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    height: 100vh;
+}
+
+.people {
+    display: grid;
+    column-gap: 30px;
+    row-gap: 18px;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(4, 200px);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+.person {
+    position: relative;
+    border-radius: 12px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 220px;
+    height: 250px;
+    /* padding-top: 12px; */
+    transition: transform 1s;
+    margin-bottom: 10px;
+
+}
+
+.person:hover {
+    background-color: #eee;
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+.person:hover img {
+    border-radius: 60px;
+
+}
+  
+.person:hover .extra {
+    display: block;
+    background-color: #eee;
+
+}
+
+.photo {
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    z-index: 1;
+    margin-top: 12px;
+}
+
+.rank {
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+
+    position: absolute;
+    text-align: center;
+    right: 24px;
+    top: 96px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #8B0000;
+}
+
+.details {
+    position: relative;
+    text-align: center;
+}
+
+.name {
+    color: #2F4F4F;
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+
+    display: flex;
+    justify-content: center;
+}
+  
+.extra {
+    width: 100%;
+    height: 46px;
+    position: absolute;
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
+    display: none;
+    z-index: 2;
+    
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.extra span {
+    color: #000;
+    text-align: center;
+    font-family: Arial;
+    font-size: 21.6px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sport::after {
+    content: ', $';
+}
+
+.pay::after {
+    content: 'M';
+}
